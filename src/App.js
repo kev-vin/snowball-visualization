@@ -255,7 +255,7 @@ const App = () => {
                 <SliderThumb />
               </Slider>
               <FormHelperText>
-                Threshold for a sampled color to be considered a majority
+                Number of repeat majority samples before accepted
               </FormHelperText>
             </FormControl>
           </Flex>
