@@ -13,6 +13,7 @@ import {
   SliderThumb,
   SliderFilledTrack,
   Button,
+  Link,
 } from "@chakra-ui/react";
 
 const App = () => {
@@ -152,6 +153,9 @@ const App = () => {
       <Center>
         <VStack>
           <Heading as="h1">Snowball Consensus Visualization</Heading>
+          <Link href="https://github.com/kev-vin/snowball-visualization">
+            View source on GitHub
+          </Link>
           <Grid nodes={nodes} />
           <Flex>
             <Button
