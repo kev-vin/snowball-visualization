@@ -14,6 +14,8 @@ import {
   SliderFilledTrack,
   Button,
   Link,
+  Text,
+  Tooltip,
 } from "@chakra-ui/react";
 
 const App = () => {
@@ -129,7 +131,6 @@ const App = () => {
       if (majority === false) {
         node.count = 0;
       }
-      console.log(node.colorConfidence, node.count);
     }
     // assign next color only after round completes to prevent feedback loop
     for (let node of newNodes) {
@@ -156,6 +157,7 @@ const App = () => {
           <Link href="https://github.com/kev-vin/snowball-visualization">
             View source on GitHub
           </Link>
+          <Text fontWeight={700}>Click on a node to view its state</Text>
           <Grid nodes={nodes} />
           <Flex>
             <Button
@@ -189,7 +191,14 @@ const App = () => {
                 <SliderTrack>
                   <SliderFilledTrack />
                 </SliderTrack>
-                <SliderThumb />
+                <Tooltip
+                  hasArrow
+                  color="white"
+                  placement="top"
+                  label={`${probStartWithColor}`}
+                >
+                  <SliderThumb />
+                </Tooltip>
               </Slider>
               <FormHelperText>
                 Probability that a node starts with a color
@@ -209,7 +218,14 @@ const App = () => {
                 <SliderTrack>
                   <SliderFilledTrack />
                 </SliderTrack>
-                <SliderThumb />
+                <Tooltip
+                  hasArrow
+                  color="white"
+                  placement="top"
+                  label={`${probStartsWithRed}`}
+                >
+                  <SliderThumb />
+                </Tooltip>
               </Slider>
               <FormHelperText>
                 If a node starts with a color, the probability it is red over
@@ -232,7 +248,14 @@ const App = () => {
                 <SliderTrack>
                   <SliderFilledTrack />
                 </SliderTrack>
-                <SliderThumb />
+                <Tooltip
+                  hasArrow
+                  color="white"
+                  placement="top"
+                  label={`${majorityThreshold}`}
+                >
+                  <SliderThumb />
+                </Tooltip>
               </Slider>
               <FormHelperText>
                 Threshold for a sampled color to be considered a majority
@@ -252,7 +275,14 @@ const App = () => {
                 <SliderTrack>
                   <SliderFilledTrack />
                 </SliderTrack>
-                <SliderThumb />
+                <Tooltip
+                  hasArrow
+                  color="white"
+                  placement="top"
+                  label={`${confidenceThreshold}`}
+                >
+                  <SliderThumb />
+                </Tooltip>
               </Slider>
               <FormHelperText>
                 Number of repeat majority samples before accepted
@@ -274,7 +304,14 @@ const App = () => {
                 <SliderTrack>
                   <SliderFilledTrack />
                 </SliderTrack>
-                <SliderThumb />
+                <Tooltip
+                  hasArrow
+                  color="white"
+                  placement="top"
+                  label={`${sampleCount}`}
+                >
+                  <SliderThumb />
+                </Tooltip>
               </Slider>
               <FormHelperText>
                 Number of other nodes each node will sample
@@ -294,7 +331,14 @@ const App = () => {
                 <SliderTrack>
                   <SliderFilledTrack />
                 </SliderTrack>
-                <SliderThumb />
+                <Tooltip
+                  hasArrow
+                  color="white"
+                  placement="top"
+                  label={`${failureProbability}`}
+                >
+                  <SliderThumb />
+                </Tooltip>
               </Slider>
               <FormHelperText>
                 Likelihood that a node will fail in a given round
@@ -316,7 +360,14 @@ const App = () => {
                 <SliderTrack>
                   <SliderFilledTrack />
                 </SliderTrack>
-                <SliderThumb />
+                <Tooltip
+                  hasArrow
+                  color="white"
+                  placement="top"
+                  label={`${recoveryProbability}`}
+                >
+                  <SliderThumb />
+                </Tooltip>
               </Slider>
               <FormHelperText>
                 Likelihood that a failed node will rejoin the network in a given
@@ -337,7 +388,14 @@ const App = () => {
                 <SliderTrack>
                   <SliderFilledTrack />
                 </SliderTrack>
-                <SliderThumb />
+                <Tooltip
+                  hasArrow
+                  color="white"
+                  placement="top"
+                  label={`${nodeCount}`}
+                >
+                  <SliderThumb />
+                </Tooltip>
               </Slider>
               <FormHelperText>
                 The number of nodes in the network

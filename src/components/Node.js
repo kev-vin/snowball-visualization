@@ -12,7 +12,7 @@ const colorMap = {
 };
 
 const Node = (props) => {
-  const { state, x, y } = props;
+  const { state, x, y, mouseOver } = props;
   return (
     <Rect
       x={x}
@@ -20,6 +20,7 @@ const Node = (props) => {
       width={cellSize - margin}
       height={cellSize - margin}
       fill={colorMap[state.failed ? "FAILED" : state.color]}
+      onMouseDown={() => mouseOver(x, y, state)}
     />
   );
 };
