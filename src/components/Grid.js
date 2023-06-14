@@ -43,9 +43,6 @@ const Grid = (props) => {
             />
           );
         })}
-        {nodeInfoBoxVisible && (
-          <NodeInfoBox nodeInfoBoxData={nodeInfoBoxData} />
-        )}
       </Layer>
       <Layer>
         {nodeInfoBoxVisible && (
