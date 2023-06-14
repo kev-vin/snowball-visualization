@@ -294,10 +294,10 @@ const App = () => {
               <FormLabel>sampleCount</FormLabel>
               <Slider
                 aria-label="slider-ex-1"
-                defaultValue={0.5}
-                min={0.1}
-                step={0.01}
-                max={1}
+                defaultValue={5}
+                min={1}
+                step={1}
+                max={20}
                 onChange={(v) => setSampleCount(v)}
                 isDisabled={simulationRunning}
               >
